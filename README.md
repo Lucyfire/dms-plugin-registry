@@ -12,6 +12,10 @@ To install a plugin clone the plugin repository into your `~/.config/DankMateria
 
 ## Plugins
 
+**Categories:** [Monitoring](#monitoring) | [Utilities](#utilities)
+
+----
+
 
 ### Monitoring
 
