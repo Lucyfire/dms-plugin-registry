@@ -12,6 +12,10 @@ To install a plugin clone the plugin repository into your `~/.config/DankMateria
 
 ## Plugins
 
+**Categories:** {% for category in categories %}[{{ category.name }}](#{{ category.name | lower | replace(" ", "-") }}){% if not loop.last %} | {% endif %}{% endfor %}
+
+----
+
 {% for category in categories %}
 ### {{ category.name }}
 
