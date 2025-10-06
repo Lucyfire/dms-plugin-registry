@@ -1,0 +1,13 @@
+{
+    "name": "Pomodoro Timer",
+    "capabilities": ["dankbar-widget"],
+    "category": "utilities",
+    "repo": "https://github.com/AvengeMedia/dms-plugins",
+    "path": "PomodoroTimer",
+    "author": "Avenge Media",
+    "firstParty": true,
+    "description": "A customizable Pomodoro timer.",
+    "dependencies": [],
+    "compositors": ["niri", "hyprland"],
+    "distro": ["any"]
+}
