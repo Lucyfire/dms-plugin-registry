@@ -1,0 +1,13 @@
+{
+    "name": "Custom Actions",
+    "capabilities": ["dankbar-widget"],
+    "category": "utilities",
+    "repo": "https://github.com/AvengeMedia/dms-plugins",
+    "path": "CustomActions",
+    "author": "Avenge Media",
+    "firstParty": true,
+    "description": "Add customizable, scriptable actions to your bar.",
+    "dependencies": [],
+    "compositors": ["niri", "hyprland"],
+    "distro": ["any"]
+}
