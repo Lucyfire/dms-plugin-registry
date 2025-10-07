@@ -1,12 +1,12 @@
 {
-    "name": "Dank Hooks",
-    "capabilities": ["watch-events"],
+    "name": "Dank Battery Alerts",
+    "capabilities": ["watch-events", "notify"],
     "category": "utilities",
     "repo": "https://github.com/AvengeMedia/dms-plugins",
-    "path": "DankHooks",
+    "path": "DankBatteryAlerts",
     "author": "Avenge Media",
     "firstParty": true,
-    "description": "Trigger scripts based on various system events.",
+    "description": "Notify on low battery levels.",
     "dependencies": [],
     "compositors": ["niri", "hyprland"],
     "distro": ["any"]
