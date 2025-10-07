@@ -87,7 +87,7 @@ Display real-time power consumption from your device
 ### Utilities
 
 
-#### [Custom Actions](https://github.com/AvengeMedia/dms-plugins)
+#### [Dank Actions](https://github.com/AvengeMedia/dms-plugins)
 
 Add customizable, scriptable actions to your bar.
 
@@ -100,14 +100,34 @@ Add customizable, scriptable actions to your bar.
 
 
 > [!NOTE]
-> This plugin is part of a monorepo, please copy the contents of the [CustomActions](https://github.com/AvengeMedia/dms-plugins/tree/main/CustomActions) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+> This plugin is part of a monorepo, please copy the contents of the [DankActions](https://github.com/AvengeMedia/dms-plugins/tree/main/DankActions) folder to your `~/.config/DankMaterialShell/plugins/` folder.
 
 
 
 
 
 
-#### [Pomodoro Timer](https://github.com/AvengeMedia/dms-plugins)
+#### [Dank Hooks](https://github.com/AvengeMedia/dms-plugins)
+
+Trigger scripts based on various system events.
+
+- author: Avenge Media
+- compositors: niri, hyprland
+- capabilities: dankbar-widget
+- dependencies: 
+- distro: any
+
+
+
+> [!NOTE]
+> This plugin is part of a monorepo, please copy the contents of the [DankHooks](https://github.com/AvengeMedia/dms-plugins/tree/main/DankHooks) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+
+
+
+
+
+
+#### [Dank Pomodoro Timer](https://github.com/AvengeMedia/dms-plugins)
 
 A customizable Pomodoro timer.
 
@@ -120,7 +140,7 @@ A customizable Pomodoro timer.
 
 
 > [!NOTE]
-> This plugin is part of a monorepo, please copy the contents of the [PomodoroTimer](https://github.com/AvengeMedia/dms-plugins/tree/main/PomodoroTimer) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+> This plugin is part of a monorepo, please copy the contents of the [DankPomodoroTimer](https://github.com/AvengeMedia/dms-plugins/tree/main/DankPomodoroTimer) folder to your `~/.config/DankMaterialShell/plugins/` folder.
 
 
 
