@@ -107,13 +107,33 @@ Add customizable, scriptable actions to your bar.
 
 
 
+#### [Dank Battery Alerts](https://github.com/AvengeMedia/dms-plugins)
+
+Notify on low battery levels.
+
+- author: Avenge Media
+- compositors: niri, hyprland
+- capabilities: watch-events, notify
+- dependencies: 
+- distro: any
+
+
+
+> [!NOTE]
+> This plugin is part of a monorepo, please copy the contents of the [DankBatteryAlerts](https://github.com/AvengeMedia/dms-plugins/tree/main/DankBatteryAlerts) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+
+
+
+
+
+
 #### [Dank Hooks](https://github.com/AvengeMedia/dms-plugins)
 
 Trigger scripts based on various system events.
 
 - author: Avenge Media
 - compositors: niri, hyprland
-- capabilities: dankbar-widget
+- capabilities: watch-events
 - dependencies: 
 - distro: any
 
