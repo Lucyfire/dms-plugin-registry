@@ -1,12 +1,12 @@
 {
-    "name": "Pomodoro Timer",
+    "name": "Dank Hooks",
     "capabilities": ["dankbar-widget"],
     "category": "utilities",
     "repo": "https://github.com/AvengeMedia/dms-plugins",
-    "path": "PomodoroTimer",
+    "path": "DankHooks",
     "author": "Avenge Media",
     "firstParty": true,
-    "description": "A customizable Pomodoro timer.",
+    "description": "Trigger scripts based on various system events.",
     "dependencies": [],
     "compositors": ["niri", "hyprland"],
     "distro": ["any"]
