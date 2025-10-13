@@ -191,6 +191,30 @@ A customizable Pomodoro timer.
 
 
 
+#### [NiriWindows](https://github.com/rochacbruno/DankNiriWindows)
+
+List and switch to open Niri windows from the launcher
+
+- author: Bruno Cesar Rocha
+- compositors: niri
+- capabilities: launcher
+- dependencies: 
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.png)
+
+</details>
+
+
+
+
 #### [WorldClock](https://github.com/rochacbruno/WorldClock)
 
 Multiple timezones clock for DankBar
