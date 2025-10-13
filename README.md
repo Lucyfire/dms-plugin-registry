@@ -87,6 +87,30 @@ Display real-time power consumption from your device
 ### Utilities
 
 
+#### [Calculator](https://github.com/rochacbruno/DankCalculator)
+
+A calculator plugin that evaluates mathematical expressions and copies results to clipboard
+
+- author: Bruno Cesar Rocha
+- compositors: niri, hyprland
+- capabilities: launcher
+- dependencies: 
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/rochacbruno/DankCalculator/raw/main/screenshot.png)
+
+</details>
+
+
+
+
 #### [Dank Actions](https://github.com/AvengeMedia/dms-plugins)
 
 Add customizable, scriptable actions to your bar.
