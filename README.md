@@ -28,6 +28,8 @@ These plugins are created by third-party developers and are not officially suppo
 
 Shuffles wallpapers with a given time interval, finds wallpapers recursively inside the specified folder
 
+
+
 - author: Daniel-42-z
 - compositors: niri, hyprland
 - capabilities: set-wallpaper
@@ -54,6 +56,8 @@ Shuffles wallpapers with a given time interval, finds wallpapers recursively ins
 #### [PowerUsage](https://github.com/Daniel-42-z/dankmaterialshell-plugins)
 
 Display real-time power consumption from your device
+
+
 
 - author: Daniel-42-z
 - compositors: niri, hyprland
@@ -91,6 +95,8 @@ Display real-time power consumption from your device
 
 A calculator plugin that evaluates mathematical expressions and copies results to clipboard
 
+**requires DMS version **: >0.1.18
+
 - author: Bruno Cesar Rocha
 - compositors: niri, hyprland
 - capabilities: launcher
@@ -115,6 +121,8 @@ A calculator plugin that evaluates mathematical expressions and copies results t
 
 Add customizable, scriptable actions to your bar.
 
+
+
 - author: Avenge Media
 - compositors: niri, hyprland
 - capabilities: dankbar-widget
@@ -134,6 +142,8 @@ Add customizable, scriptable actions to your bar.
 #### [Dank Battery Alerts](https://github.com/AvengeMedia/dms-plugins)
 
 Notify on low battery levels.
+
+
 
 - author: Avenge Media
 - compositors: niri, hyprland
@@ -155,6 +165,8 @@ Notify on low battery levels.
 
 Trigger scripts based on various system events.
 
+
+
 - author: Avenge Media
 - compositors: niri, hyprland
 - capabilities: watch-events
@@ -175,6 +187,8 @@ Trigger scripts based on various system events.
 
 A customizable Pomodoro timer.
 
+
+
 - author: Avenge Media
 - compositors: niri, hyprland
 - capabilities: dankbar-widget
@@ -194,6 +208,8 @@ A customizable Pomodoro timer.
 #### [NiriWindows](https://github.com/rochacbruno/DankNiriWindows)
 
 List and switch to open Niri windows from the launcher
+
+**requires DMS version **: >0.1.18
 
 - author: Bruno Cesar Rocha
 - compositors: niri
@@ -218,6 +234,8 @@ List and switch to open Niri windows from the launcher
 #### [WorldClock](https://github.com/rochacbruno/WorldClock)
 
 Multiple timezones clock for DankBar
+
+**requires DMS version **: >0.0.28
 
 - author: Bruno Cesar Rocha
 - compositors: niri, hyprland
