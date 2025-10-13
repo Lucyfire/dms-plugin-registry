@@ -8,5 +8,6 @@
     "dependencies": [],
     "compositors": ["niri"],
     "distro": ["any"],
-    "screenshot": "https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.png"
+    "screenshot": "https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.png",
+    "requires_dms": ">0.1.18"
 }
