@@ -95,7 +95,7 @@ Display real-time power consumption from your device
 
 A calculator plugin that evaluates mathematical expressions and copies results to clipboard
 
-**requires DMS version **: >0.1.18
+<strong>requires DMS version</strong>: <pre>>0.1.18</pre>
 
 - author: Bruno Cesar Rocha
 - compositors: niri, hyprland
@@ -209,7 +209,7 @@ A customizable Pomodoro timer.
 
 List and switch to open Niri windows from the launcher
 
-**requires DMS version **: >0.1.18
+<strong>requires DMS version</strong>: <pre>>0.1.18</pre>
 
 - author: Bruno Cesar Rocha
 - compositors: niri
@@ -235,7 +235,7 @@ List and switch to open Niri windows from the launcher
 
 Multiple timezones clock for DankBar
 
-**requires DMS version **: >0.0.28
+<strong>requires DMS version</strong>: <pre>>0.0.28</pre>
 
 - author: Bruno Cesar Rocha
 - compositors: niri, hyprland
