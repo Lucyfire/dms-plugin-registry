@@ -28,7 +28,7 @@ These plugins are created by third-party developers and are not officially suppo
 
 {{ plugin.description }}
 
-{%if plugin.requires_dms %}**requires DMS version **: {{plugin.requires_dms}}{%endif%}
+{%if plugin.requires_dms %}<strong>requires DMS version</strong>: <pre>{{plugin.requires_dms}}</pre>{%endif%}
 
 - author: {{ plugin.author }}
 - compositors: {{ plugin.compositors | join(", ") }}
