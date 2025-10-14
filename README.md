@@ -2,6 +2,8 @@
 
 This repository contains a collection of plugins for [Dank Material Shell](https://github.com/AvengeMedia/DankMaterialShell)
 
+[https://plugins.danklinux.com/](https://plugins.danklinux.com/)
+
 ## Contributing
 
 To add your Plugin to the list please read the [contribution guidelines](CONTRIBUTING.md) and create a pull request.
