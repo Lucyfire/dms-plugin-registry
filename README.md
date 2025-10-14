@@ -24,7 +24,7 @@ These plugins are created by third-party developers and are not officially suppo
 ### Appearance
 
 
-#### [WallpaperShuffler](https://github.com/Daniel-42-z/dankmaterialshell-plugins)
+#### [WallpaperShuffler](https://github.com/Daniel-42-z/dms-wallpaper-shuffler)
 
 Shuffles wallpapers with a given time interval, finds wallpapers recursively inside the specified folder
 
@@ -38,10 +38,14 @@ Shuffles wallpapers with a given time interval, finds wallpapers recursively ins
 
 
 
-> [!NOTE]
-> This plugin is part of a monorepo, please copy the contents of the [WallpaperShuffler](https://github.com/Daniel-42-z/dankmaterialshell-plugins/tree/main/WallpaperShuffler) folder to your `~/.config/DankMaterialShell/plugins/` folder.
 
 
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/Daniel-42-z/dms-wallpaper-shuffler/blob/main/screenshot.png)
+
+</details>
 
 
 
@@ -53,7 +57,7 @@ Shuffles wallpapers with a given time interval, finds wallpapers recursively ins
 ### Monitoring
 
 
-#### [PowerUsage](https://github.com/Daniel-42-z/dankmaterialshell-plugins)
+#### [PowerUsage](https://github.com/Daniel-42-z/dms-power-usage)
 
 Display real-time power consumption from your device
 
@@ -67,17 +71,12 @@ Display real-time power consumption from your device
 
 
 
-> [!NOTE]
-> This plugin is part of a monorepo, please copy the contents of the [PowerUsage](https://github.com/Daniel-42-z/dankmaterialshell-plugins/tree/main/PowerUsage) folder to your `~/.config/DankMaterialShell/plugins/` folder.
-
-
-
 
 
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/Daniel-42-z/dankmaterialshell-plugins/raw/main/PowerUsage/screenshot.png)
+![screenshot](https://github.com/Daniel-42-z/dms-power-usage/blob/main/screenshot.png)
 
 </details>
 
