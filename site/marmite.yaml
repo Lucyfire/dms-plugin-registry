@@ -1,0 +1,74 @@
+name: DMS Plugin Registry
+tagline: Plugins for Dank Material Shell
+url: ''
+https: null
+footer: <div>Powered by <a href="https://github.com/rochacbruno/marmite">Marmite</a></div>
+language: 'en'
+pagination: 40
+pages_title: Pages
+tags_title: Tags
+tags_content_title: Plugins tagged with '$tag'
+archives_title: Archive
+archives_content_title: Plugins from '$year'
+streams_title: Streams
+streams_content_title: Plugins from '$stream'
+series_title: Series
+series_content_title: Plugins from '$series' series
+default_author: ''
+authors_title: Authors
+enable_search: true
+enable_related_content: true
+search_title: ''
+content_path: content
+site_path: ''
+templates_path: templates
+static_path: static
+media_path: media
+card_image: ''
+banner_image: ''
+logo_image: ''
+default_date_format: '%b %e, %Y'
+menu:
+- - Categories
+  - tags.html
+- - DMS
+  - https://github.com/AvengeMedia/DankMaterialShell
+- - Github
+  - https://github.com/AvengeMedia/dms-plugin-registry 
+extra:
+  colormode: dark
+  colormodetoggle: true
+authors:
+  "Bruno Cesar Rocha":
+    name: Bruno Rocha
+    avatar: https://github.com/rochacbruno.png
+    bio: Software Engineer @ Red Hat, Fedora + Niri + DMS
+    links:
+      - ["Fediverse", "https://go.rocha.social/@bruno"]
+      - ["Github", "https://github.com/rochacbruno"]
+      - ["Linkedin", "https://www.linkedin.com/in/rochacbruno/"]
+      - ["Links", "https://bruno.rocha.social"]
+  "Avenge Media":
+    name: "Avenge Media (official)"
+    avatar: https://github.com/AvengeMedia.png
+    links:
+      - ["DMS", "https://github.com/AvengeMedia/DankMaterialShell"]
+      - ["DMS-Official-Plugins", "https://github.com/AvengeMedia/dms-plugins"]
+streams: {}
+series: {}
+toc: false
+json_feed: true
+show_next_prev_links: true
+publish_md: false
+source_repository: null
+image_provider: null
+markdown_parser: null
+theme: dms
+file_mapping: []
+enable_shortcodes: true
+shortcode_pattern: null
+build_sitemap: true
+publish_urls_json: true
+gallery_path: gallery
+gallery_create_thumbnails: true
+gallery_thumb_size: 50
