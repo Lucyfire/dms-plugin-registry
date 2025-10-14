@@ -29,3 +29,6 @@ jobs:
             exit 1
           fi
           echo "README.md generated successfully"
+
+      - name: Validate plugin links and paths
+        run: uv run .github/validate_links.py
