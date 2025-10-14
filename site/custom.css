@@ -1235,3 +1235,84 @@ article > article a:hover {
 .main-content {
   min-height: 60vh;
 }
+
+/* ====================================
+   Mobile Menu Hamburger
+   ==================================== */
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  color: var(--md-sys-color-primary);
+  position: relative;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.hamburger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 50%;
+}
+
+.hamburger:hover::before {
+  opacity: 0.08;
+}
+
+.hamburger:focus {
+  outline: none;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 1025px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide menu by default on mobile */
+  .header-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--md-sys-color-surface-container);
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 8px;
+    z-index: 100;
+    box-shadow: var(--md-sys-elevation-3);
+    min-width: 200px;
+  }
+
+  /* Show menu when active */
+  .header-menu.active {
+    display: flex;
+  }
+
+  /* Adjust menu items for mobile */
+  .header-menu .menu-item {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  /* Make header-nav flex for hamburger positioning */
+  .header-nav {
+    position: relative;
+  }
+}
