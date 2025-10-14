@@ -43,7 +43,7 @@ Shuffles wallpapers with a given time interval, finds wallpapers recursively ins
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/Daniel-42-z/dms-wallpaper-shuffler/blob/main/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/Daniel-42-z/dms-wallpaper-shuffler/refs/heads/main/screenshot.png)
 
 </details>
 
@@ -76,7 +76,7 @@ Display real-time power consumption from your device
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/Daniel-42-z/dms-power-usage/blob/main/screenshot.png)
+![screenshot](https://github.com/Daniel-42-z/dms-power-usage/raw/main/screenshot.png)
 
 </details>
 
@@ -140,7 +140,7 @@ Add customizable, scriptable actions to your bar.
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://private-user-images.githubusercontent.com/550752/497937179-36b44c32-69b5-49c9-97d2-87f530e4b7fd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjAzODk0NTcsIm5iZiI6MTc2MDM4OTE1NywicGF0aCI6Ii81NTA3NTIvNDk3OTM3MTc5LTM2YjQ0YzMyLTY5YjUtNDljOS05N2QyLTg3ZjUzMGU0YjdmZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAxM1QyMDU5MTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mYzJiYTliN2FiNmFhYzY5MWQyODcxNTJkMzQwNTNiYzQzZjgwZDgxYTQ0ZDQ1Y2I5NTQyODdlNzU4MGU0MWEwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.HP1Lc3rg08ouX4XugxUB3hAu5ZbpDuhKSLy_a0Hk4PU)
+![screenshot](https://raw.githubusercontent.com/AvengeMedia/dms-plugin-registry/master/assets/dank-actions.png)
 
 </details>
 
@@ -171,7 +171,7 @@ Notify on low battery levels.
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://private-user-images.githubusercontent.com/550752/498391777-4302d886-eb87-41d4-a9a4-1eeaadd787c6.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjAzODk0NTcsIm5iZiI6MTc2MDM4OTE1NywicGF0aCI6Ii81NTA3NTIvNDk4MzkxNzc3LTQzMDJkODg2LWViODctNDFkNC1hOWE0LTFlZWFhZGQ3ODdjNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAxM1QyMDU5MTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04ZGMzNzY1MGZmMGE0OTc0ZTFiOGY3ZjJkNzljNTc5NzkwMDNiYWUxYzc3YTIwYTdhZDVhMDViMmIwMzVkMzk4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.KQZ_pLKHEjCNYsRMOuCUKjl4cYXdQkCAbvkVEfiJaJk)
+![screenshot](https://raw.githubusercontent.com/AvengeMedia/dms-plugin-registry/master/assets/dank-batteryalerts.png)
 
 </details>
 
@@ -202,7 +202,7 @@ Trigger scripts based on various system events.
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://private-user-images.githubusercontent.com/550752/498377075-83e89b5b-0636-4b8e-ba29-1fa4d12169a0.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjAzODk0NTcsIm5iZiI6MTc2MDM4OTE1NywicGF0aCI6Ii81NTA3NTIvNDk4Mzc3MDc1LTgzZTg5YjViLTA2MzYtNGI4ZS1iYTI5LTFmYTRkMTIxNjlhMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAxM1QyMDU5MTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMjEyNTg4ZTFkNWVkMmM1NjUwNGM4YmFhZjhkYmMwZThmMzc2MmJiYzNiMTBjNmM0MjQxM2Q3N2MxNzQ0YzAwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Q0n1hLpqhOJQrx0cf5Zjy6J2cgmuj6LlIfiF0CYp4u8)
+![screenshot](https://raw.githubusercontent.com/AvengeMedia/dms-plugin-registry/master/assets/dank-hooks.png)
 
 </details>
 
@@ -233,7 +233,7 @@ A customizable Pomodoro timer.
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://private-user-images.githubusercontent.com/550752/497960861-b51b5f78-5215-403c-850f-c7e137097438.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjAzODk0NTcsIm5iZiI6MTc2MDM4OTE1NywicGF0aCI6Ii81NTA3NTIvNDk3OTYwODYxLWI1MWI1Zjc4LTUyMTUtNDAzYy04NTBmLWM3ZTEzNzA5NzQzOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMDEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTAxM1QyMDU5MTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01NDczMWU4MTQ4ZjU2YjgxNjg2ZmI0ZjA4Y2M0OTBjOGQwZmQ4N2E4NGI5MTg3NmQ4OTMyYTAwYzYxNzBhYzQwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.5seKYp0TcRQZK3egG54ofMFIqOKF7u1EDn3EUl3g8og)
+![screenshot](https://raw.githubusercontent.com/AvengeMedia/dms-plugin-registry/master/assets/dank-pomodoro.png)
 
 </details>
 
