@@ -10,6 +10,8 @@ pinned: false
 Display real-time power consumption from your device
 
 
+![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FDaniel-42-z%2Fdms-power-usage%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
+
 > [!NOTE] installation
 > Run `dms plugins install "PowerUsage"`
 

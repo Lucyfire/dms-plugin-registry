@@ -52,6 +52,8 @@ def validate_plugin(plugin: dict, filename: str) -> bool:
 def validate_all_plugins(plugins_dir: Path) -> bool:
     """Validate all plugin JSON files."""
     all_valid = True
+    seen_ids = {}
+    seen_names = {}
 
     for json_file in plugins_dir.glob("*.json"):
         try:
@@ -59,6 +61,27 @@ def validate_all_plugins(plugins_dir: Path) -> bool:
                 plugin_data = json.load(f)
                 if not validate_plugin(plugin_data, json_file.name):
                     all_valid = False
+
+                # Check for duplicate IDs
+                plugin_id = plugin_data.get("id")
+                if plugin_id:
+                    if plugin_id in seen_ids:
+                        print(f"Duplicate ID '{plugin_id}' found in {json_file.name} "
+                              f"(previously in {seen_ids[plugin_id]})", file=sys.stderr)
+                        all_valid = False
+                    else:
+                        seen_ids[plugin_id] = json_file.name
+
+                # Check for duplicate names
+                plugin_name = plugin_data.get("name")
+                if plugin_name:
+                    if plugin_name in seen_names:
+                        print(f"Duplicate name '{plugin_name}' found in {json_file.name} "
+                              f"(previously in {seen_names[plugin_name]})", file=sys.stderr)
+                        all_valid = False
+                    else:
+                        seen_names[plugin_name] = json_file.name
+
         except json.JSONDecodeError as e:
             print(f"JSON parse error in {json_file}: {e}", file=sys.stderr)
             all_valid = False

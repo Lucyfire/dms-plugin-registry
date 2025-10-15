@@ -11,8 +11,62 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
+from urllib.parse import urlparse
 
 import requests
+
+
+def get_default_branch(repo_url: str) -> str:
+    """Get the default branch for a repository.
+
+    Args:
+        repo_url: Repository URL (GitHub, GitLab, Codeberg, etc.)
+
+    Returns:
+        Default branch name, or 'main' if unable to determine
+    """
+    parsed = urlparse(repo_url)
+
+    # Extract owner/repo from path like /owner/repo or /owner/repo.git
+    path_parts = parsed.path.strip("/").rstrip(".git").split("/")
+    if len(path_parts) < 2:
+        return "main"
+
+    owner, repo = path_parts[0], path_parts[1]
+
+    try:
+        if parsed.netloc == "github.com":
+            # GitHub API
+            api_url = f"https://api.github.com/repos/{owner}/{repo}"
+            response = requests.get(api_url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                return data.get("default_branch", "main")
+
+        elif parsed.netloc == "gitlab.com" or "gitlab" in parsed.netloc:
+            # GitLab API
+            project_path = f"{owner}%2F{repo}"
+            base_url = f"https://{parsed.netloc}"
+            api_url = f"{base_url}/api/v4/projects/{project_path}"
+            response = requests.get(api_url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                return data.get("default_branch", "main")
+
+        elif parsed.netloc == "codeberg.org" or "gitea" in parsed.netloc or "forgejo" in parsed.netloc:
+            # Codeberg/Gitea/Forgejo API
+            base_url = f"https://{parsed.netloc}"
+            api_url = f"{base_url}/api/v1/repos/{owner}/{repo}"
+            response = requests.get(api_url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                return data.get("default_branch", "main")
+
+    except requests.RequestException as e:
+        print(f"Warning: Failed to fetch default branch for {repo_url}: {e}", file=sys.stderr)
+
+    # Fallback to 'main'
+    return "main"
 
 
 def fetch_readme(repo_url: str, path: Optional[str] = None) -> str:
@@ -121,6 +175,56 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
 
     is_official = plugin.get("author") == "Avenge Media"
 
+    # Build release badge URL
+    release_badge = ""
+    repo_url = plugin.get('repo', '')
+    if repo_url:
+        # Get default branch dynamically
+        branch = get_default_branch(repo_url)
+
+        # Parse repo URL to get owner/repo
+        parts = repo_url.rstrip('/').split('github.com/')
+        if len(parts) == 2:
+            owner_repo = parts[1]
+        else:
+            # Handle non-GitHub repos (GitLab, Codeberg, etc.)
+            parsed = urlparse(repo_url)
+            owner_repo = parsed.path.strip("/").rstrip(".git")
+
+        # Build raw URL for plugin.json
+        parsed = urlparse(repo_url)
+        if parsed.netloc == "github.com":
+            # GitHub raw URL
+            if plugin.get('path'):
+                plugin_json_url = f"https://raw.githubusercontent.com/{owner_repo}/{branch}/{plugin['path']}/plugin.json"
+            else:
+                plugin_json_url = f"https://raw.githubusercontent.com/{owner_repo}/{branch}/plugin.json"
+        elif parsed.netloc == "gitlab.com" or "gitlab" in parsed.netloc:
+            # GitLab raw URL
+            base_url = f"https://{parsed.netloc}"
+            if plugin.get('path'):
+                plugin_json_url = f"{base_url}/{owner_repo}/-/raw/{branch}/{plugin['path']}/plugin.json"
+            else:
+                plugin_json_url = f"{base_url}/{owner_repo}/-/raw/{branch}/plugin.json"
+        elif parsed.netloc == "codeberg.org" or "gitea" in parsed.netloc or "forgejo" in parsed.netloc:
+            # Codeberg/Gitea/Forgejo raw URL
+            base_url = f"https://{parsed.netloc}"
+            if plugin.get('path'):
+                plugin_json_url = f"{base_url}/{owner_repo}/raw/branch/{branch}/{plugin['path']}/plugin.json"
+            else:
+                plugin_json_url = f"{base_url}/{owner_repo}/raw/branch/{branch}/plugin.json"
+        else:
+            # Unknown hosting service - try GitHub format as fallback
+            if plugin.get('path'):
+                plugin_json_url = f"https://raw.githubusercontent.com/{owner_repo}/{branch}/{plugin['path']}/plugin.json"
+            else:
+                plugin_json_url = f"https://raw.githubusercontent.com/{owner_repo}/{branch}/plugin.json"
+
+        # URL encode the plugin.json URL for shields.io
+        from urllib.parse import quote
+        encoded_url = quote(plugin_json_url, safe='')
+        release_badge = f"![RELEASE](https://img.shields.io/badge/dynamic/json?url={encoded_url}&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)"
+
     # Build markdown content
     markdown = f"""---
 date: {current_date}
@@ -133,6 +237,8 @@ pinned: {"true" if is_official else "false"}
 
 {plugin.get('description', 'No description available.')}
 
+
+{release_badge}
 
 > [!NOTE] installation
 > Run `dms plugins install "{plugin.get('name')}"`

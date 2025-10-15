@@ -10,6 +10,8 @@ pinned: true
 Notify on low battery levels.
 
 
+![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FAvengeMedia%2Fdms-plugins%2Fmaster%2FDankBatteryAlerts%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
+
 > [!NOTE] installation
 > Run `dms plugins install "Dank Battery Alerts"`
 

@@ -10,6 +10,8 @@ pinned: false
 List and switch to open Niri windows from the launcher
 
 
+![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frochacbruno%2FDankNiriWindows%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
+
 > [!NOTE] installation
 > Run `dms plugins install "NiriWindows"`
 
@@ -29,6 +31,8 @@ List and switch to open Niri windows from the launcher
 
 
 # Niri Windows Plugin for DMS Launcher
+
+[![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Frochacbruno%2FDankNiriWindows%2Fraw%2Frefs%2Fheads%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)](https://plugins.danklinux.com/niriwindows.html)
 
 A launcher plugin that lists all open windows in the Niri window manager and allows quick switching between them.
 
