@@ -7,7 +7,7 @@ card_image: https://github.com/rochacbruno/WorldClock/raw/main/screenshot.png
 pinned: false
 ---
 
-Multiple timezones clock for DankBar
+Multiple timezones clock for DankBar <a href="https://github.com/rochacbruno/WorldClock" target="_blank" rel="noopener noreferrer"><img src="./static/repo-icon.png" alt="Repository" style="vertical-align: middle; height: 24px;"></a>
 
 
 ![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frochacbruno%2FWorldClock%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
@@ -19,15 +19,15 @@ Multiple timezones clock for DankBar
 
 | Plugin Information                 | Value                                         |
 | ---------------------------------- | --------------------------------------------- |
-| name                               | WorldClock                          |
-| author                             | Bruno Cesar Rocha      |
-| repo                               | [Link](https://github.com/rochacbruno/WorldClock)             |
-| capabilities                       | dankbar-widget   |
-| category                           | utilities     |
-| compositors                        | niri, hyprland    |
-| distro                             | any         |
-| dependencies                       | moment-js   |
-| requires DMS                       | >0.0.28           |
+| name                               | WorldClock                             |
+| author                             | Bruno Cesar Rocha                           |
+| repo                               | [Link](https://github.com/rochacbruno/WorldClock)                     |
+| capabilities                       | dankbar-widget        |
+| category                           | utilities                         |
+| compositors                        | niri, hyprland         |
+| distro                             | any              |
+| dependencies                       | moment-js        |
+| requires DMS                       | >0.0.28                     |
 
 
 ![WorldClock Screenshot](https://github.com/rochacbruno/WorldClock/raw/main/screenshot.png)
@@ -85,5 +85,4 @@ This plugin requires:
 
 <img width="792" height="786" alt="Screenshot from 2025-09-30 19-34-34" src="https://github.com/user-attachments/assets/98e03d98-2752-41cf-9678-419a11560031" />
 <img width="490" height="574" alt="Screenshot from 2025-09-30 19-34-51" src="https://github.com/user-attachments/assets/87d7b179-8ed5-4ef4-9de1-de27137c8544" />
-
 

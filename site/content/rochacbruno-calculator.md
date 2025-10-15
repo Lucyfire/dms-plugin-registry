@@ -7,7 +7,7 @@ card_image: https://github.com/rochacbruno/DankCalculator/raw/main/screenshot.pn
 pinned: false
 ---
 
-A calculator plugin that evaluates mathematical expressions and copies results to clipboard
+A calculator plugin that evaluates mathematical expressions and copies results to clipboard <a href="https://github.com/rochacbruno/DankCalculator" target="_blank" rel="noopener noreferrer"><img src="./static/repo-icon.png" alt="Repository" style="vertical-align: middle; height: 24px;"></a>
 
 
 ![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frochacbruno%2FDankCalculator%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
@@ -19,15 +19,15 @@ A calculator plugin that evaluates mathematical expressions and copies results t
 
 | Plugin Information                 | Value                                         |
 | ---------------------------------- | --------------------------------------------- |
-| name                               | Calculator                          |
-| author                             | Bruno Cesar Rocha      |
-| repo                               | [Link](https://github.com/rochacbruno/DankCalculator)             |
-| capabilities                       | launcher   |
-| category                           | utilities     |
-| compositors                        | niri, hyprland    |
-| distro                             | any         |
-| dependencies                       |    |
-| requires DMS                       | >0.1.18           |
+| name                               | Calculator                             |
+| author                             | Bruno Cesar Rocha                           |
+| repo                               | [Link](https://github.com/rochacbruno/DankCalculator)                     |
+| capabilities                       | launcher        |
+| category                           | utilities                         |
+| compositors                        | niri, hyprland         |
+| distro                             | any              |
+| dependencies                       |         |
+| requires DMS                       | >0.1.18                     |
 
 
 # Calculator Plugin for DMS Launcher
@@ -182,5 +182,4 @@ Bruno Cesar Rocha
 ## License
 
 Same as DankMaterialShell
-
 

@@ -2,6 +2,7 @@
 # /// script
 # dependencies = [
 #   "requests",
+#   "jinja2",
 # ]
 # ///
 """Generate site content from plugins/*.json files."""
@@ -14,6 +15,45 @@ from typing import Optional
 from urllib.parse import urlparse
 
 import requests
+from jinja2 import Template
+
+
+# Jinja2 template for plugin markdown content
+PLUGIN_TEMPLATE = Template("""---
+date: {{ current_date }}
+title: {{ plugin.name }}
+author: {{ plugin.author }}
+tags: {{ tags }}
+card_image: {{ screenshot }}
+pinned: {{ 'true' if is_official else 'false' }}
+---
+
+{{ plugin.description }} <a href="{{ plugin.repo }}" target="_blank" rel="noopener noreferrer"><img src="./static/repo-icon.png" alt="Repository" style="vertical-align: middle; height: 24px;"></a>
+
+
+{{ release_badge }}
+
+> [!NOTE] installation
+> Run `dms plugins install "{{ plugin.name }}"`
+
+---
+
+| Plugin Information                 | Value                                         |
+| ---------------------------------- | --------------------------------------------- |
+| name                               | {{ plugin.name }}                             |
+| author                             | {{ plugin.author }}                           |
+| repo                               | [Link]({{ plugin.repo }})                     |
+| capabilities                       | {{ plugin.capabilities | join(', ') }}        |
+| category                           | {{ plugin.category }}                         |
+| compositors                        | {{ plugin.compositors | join(', ') }}         |
+| distro                             | {{ plugin.distro | join(', ') }}              |
+| dependencies                       | {{ plugin.dependencies | join(', ') }}        |
+| requires DMS                       | {{ plugin.requires_dms }}                     |
+
+{{ screenshot_section }}
+{{ readme_content }}
+
+""")
 
 
 def get_default_branch(repo_url: str) -> str:
@@ -119,6 +159,9 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
     Returns:
         Markdown content with frontmatter
     """
+    import re
+    from urllib.parse import quote
+
     # Fetch README from repository
     readme_content = fetch_readme(
         plugin.get('repo', ''),
@@ -129,7 +172,6 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
     # and add the repo raw URL prefix.
     # so ![image](image.png) becomes ![image](https://raw.githubusercontent.com/author/repo/main/image.png)
     # use regex to match ![alt](url.{png,jpg,jpeg,gif,webp})
-    import re 
     def replace_relative_image(match):
         alt_text = match.group(1)
         img_url = match.group(2)
@@ -149,7 +191,6 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
 
     readme_content = re.sub(r'!\[([^\]]*)\]\(([^)]+\.(png|jpg|jpeg|gif|webp))\)', replace_relative_image, readme_content)
 
-
     # Build tags list: capabilities + category + compositors + distro
     tags = []
     tags.extend(plugin.get('capabilities', []))
@@ -167,11 +208,6 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
     screenshot_section = ""
     if 'screenshot' in plugin and plugin['screenshot'] and no_image_on_readme:
         screenshot_section = f"\n![{plugin['name']} Screenshot]({plugin['screenshot']})\n"
-
-    # Build requires_dms section
-    requires_section = ""
-    if 'requires_dms' in plugin and plugin['requires_dms']:
-        requires_section = f"\n**Requires DMS version:** `{plugin['requires_dms']}`\n"
 
     is_official = plugin.get("author") == "Avenge Media"
 
@@ -221,48 +257,34 @@ def generate_markdown(plugin: dict, plugin_filename: str, current_date: str) -> 
                 plugin_json_url = f"https://raw.githubusercontent.com/{owner_repo}/{branch}/plugin.json"
 
         # URL encode the plugin.json URL for shields.io
-        from urllib.parse import quote
         encoded_url = quote(plugin_json_url, safe='')
         release_badge = f"![RELEASE](https://img.shields.io/badge/dynamic/json?url={encoded_url}&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)"
 
-    # Build markdown content
-    markdown = f"""---
-date: {current_date}
-title: {plugin.get('name', 'Unknown Plugin')}
-author: {plugin.get('author', 'Unknown Author')}
-tags: {tags_str}
-card_image: {screenshot}
-pinned: {"true" if is_official else "false"}
----
+    # Prepare context for template
+    context = {
+        'current_date': current_date,
+        'plugin': {
+            'name': plugin.get('name', 'Unknown Plugin'),
+            'author': plugin.get('author', 'Unknown Author'),
+            'description': plugin.get('description', 'No description available.'),
+            'repo': plugin.get('repo', '#'),
+            'capabilities': plugin.get('capabilities', []),
+            'category': plugin.get('category', 'Uncategorized'),
+            'compositors': plugin.get('compositors', []),
+            'distro': plugin.get('distro', []),
+            'dependencies': plugin.get('dependencies', []),
+            'requires_dms': plugin.get('requires_dms', 'N/A'),
+        },
+        'tags': tags_str,
+        'screenshot': screenshot,
+        'is_official': is_official,
+        'release_badge': release_badge,
+        'screenshot_section': screenshot_section,
+        'readme_content': readme_content,
+    }
 
-{plugin.get('description', 'No description available.')}
-
-
-{release_badge}
-
-> [!NOTE] installation
-> Run `dms plugins install "{plugin.get('name')}"`
-
----
-
-| Plugin Information                 | Value                                         |
-| ---------------------------------- | --------------------------------------------- |
-| name                               | {plugin.get('name')}                          |
-| author                             | {plugin.get('author', 'Unknown Author')}      |
-| repo                               | [Link]({plugin.get('repo', '#')})             |
-| capabilities                       | {', '.join(plugin.get('capabilities', []))}   |
-| category                           | {plugin.get('category', 'Uncategorized')}     |
-| compositors                        | {', '.join(plugin.get('compositors', []))}    |
-| distro                             | {', '.join(plugin.get('distro', []))}         |
-| dependencies                       | {', '.join(plugin.get('dependencies', []))}   |
-| requires DMS                       | {plugin.get('requires_dms', 'N/A')}           |
-
-{screenshot_section}
-{readme_content}
-
-"""
-
-    return markdown
+    # Render template
+    return PLUGIN_TEMPLATE.render(context)
 
 
 def generate_site_content() -> int:

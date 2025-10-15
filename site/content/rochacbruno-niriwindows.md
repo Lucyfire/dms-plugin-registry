@@ -7,7 +7,7 @@ card_image: https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.p
 pinned: false
 ---
 
-List and switch to open Niri windows from the launcher
+List and switch to open Niri windows from the launcher <a href="https://github.com/rochacbruno/DankNiriWindows" target="_blank" rel="noopener noreferrer"><img src="./static/repo-icon.png" alt="Repository" style="vertical-align: middle; height: 24px;"></a>
 
 
 ![RELEASE](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frochacbruno%2FDankNiriWindows%2Fmain%2Fplugin.json&query=version&style=for-the-badge&label=RELEASE&labelColor=101418&color=9ccbfb)
@@ -19,15 +19,15 @@ List and switch to open Niri windows from the launcher
 
 | Plugin Information                 | Value                                         |
 | ---------------------------------- | --------------------------------------------- |
-| name                               | NiriWindows                          |
-| author                             | Bruno Cesar Rocha      |
-| repo                               | [Link](https://github.com/rochacbruno/DankNiriWindows)             |
-| capabilities                       | launcher   |
-| category                           | utilities     |
-| compositors                        | niri    |
-| distro                             | any         |
-| dependencies                       |    |
-| requires DMS                       | >0.1.18           |
+| name                               | NiriWindows                             |
+| author                             | Bruno Cesar Rocha                           |
+| repo                               | [Link](https://github.com/rochacbruno/DankNiriWindows)                     |
+| capabilities                       | launcher        |
+| category                           | utilities                         |
+| compositors                        | niri         |
+| distro                             | any              |
+| dependencies                       |         |
+| requires DMS                       | >0.1.18                     |
 
 
 # Niri Windows Plugin for DMS Launcher
@@ -166,5 +166,4 @@ DMS Team
 ## License
 
 Same as DankMaterialShell
-
 
