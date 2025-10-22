@@ -137,7 +137,7 @@ Execute shell commands from the launcher with history tracking, common shortcuts
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/devnullvoid/dms-command-runner/blob/main/screenshot.png)
+![screenshot](https://github.com/devnullvoid/dms-command-runner/blob/main/screenshot.png?raw=true)
 
 </details>
 
@@ -287,7 +287,7 @@ Search and copy 300+ emojis and 100+ unicode characters directly from the launch
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/devnullvoid/dms-emoji-launcher/blob/main/screenshot.png)
+![screenshot](https://github.com/devnullvoid/dms-emoji-launcher/blob/main/screenshot.png?raw=true)
 
 </details>
 
@@ -339,7 +339,7 @@ Search the web with 23+ built-in search engines plus custom search engine suppor
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/devnullvoid/dms-web-search/blob/main/screenshot.png)
+![screenshot](https://github.com/devnullvoid/dms-web-search/blob/main/screenshot.png?raw=true)
 
 </details>
 
