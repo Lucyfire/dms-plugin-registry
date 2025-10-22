@@ -118,6 +118,32 @@ A calculator plugin that evaluates mathematical expressions and copies results t
 
 
 
+#### [Command Runner](https://github.com/devnullvoid/dms-command-runner)
+
+Execute shell commands from the launcher with history tracking, common shortcuts, and terminal/background execution modes
+
+
+
+- author: devnullvoid
+- compositors: niri, hyprland
+- capabilities: launcher
+- dependencies: 
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/devnullvoid/dms-command-runner/blob/main/screenshot.png)
+
+</details>
+
+
+
+
 #### [Dank Actions](https://github.com/AvengeMedia/dms-plugins)
 
 Add customizable, scriptable actions to your bar.
@@ -242,6 +268,32 @@ A customizable Pomodoro timer.
 
 
 
+#### [Emoji & Unicode Launcher](https://github.com/devnullvoid/dms-emoji-launcher)
+
+Search and copy 300+ emojis and 100+ unicode characters directly from the launcher with instant clipboard copying
+
+
+
+- author: devnullvoid
+- compositors: niri, hyprland
+- capabilities: launcher
+- dependencies: 
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/devnullvoid/dms-emoji-launcher/blob/main/screenshot.png)
+
+</details>
+
+
+
+
 #### [NiriWindows](https://github.com/rochacbruno/DankNiriWindows)
 
 List and switch to open Niri windows from the launcher
@@ -262,6 +314,32 @@ List and switch to open Niri windows from the launcher
 <summary>Screenshot</summary>
 
 ![screenshot](https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.png)
+
+</details>
+
+
+
+
+#### [Web Search](https://github.com/devnullvoid/dms-web-search)
+
+Search the web with 23+ built-in search engines plus custom search engine support with keyword-based selection
+
+
+
+- author: devnullvoid
+- compositors: niri, hyprland
+- capabilities: launcher
+- dependencies: 
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/devnullvoid/dms-web-search/blob/main/screenshot.png)
 
 </details>
 
