@@ -1,4 +1,5 @@
 {
+    "id": "niriWindows",
     "name": "NiriWindows",
     "capabilities": ["launcher"],
     "category": "utilities",

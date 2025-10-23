@@ -1,4 +1,5 @@
 {
+    "id": "dankBatteryAlerts",
     "name": "Dank Battery Alerts",
     "capabilities": ["watch-events", "notify"],
     "category": "utilities",

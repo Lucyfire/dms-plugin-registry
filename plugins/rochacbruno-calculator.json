@@ -1,4 +1,5 @@
 {
+    "id": "calculator",
     "name": "Calculator",
     "capabilities": ["launcher"],
     "category": "utilities",

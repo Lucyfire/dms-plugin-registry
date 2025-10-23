@@ -1,4 +1,5 @@
 {
+  "id": "commandRunner",
   "name": "Command Runner",
   "capabilities": ["launcher"],
   "category": "utilities",

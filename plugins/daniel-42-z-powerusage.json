@@ -1,4 +1,5 @@
 {
+	"id": "powerUsagePlugin",
 	"name": "PowerUsage",
 	"capabilities": [
 		"dankbar-widget"

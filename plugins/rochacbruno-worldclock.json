@@ -1,4 +1,5 @@
 {
+    "id": "worldClock",
     "name": "WorldClock",
     "capabilities": ["dankbar-widget"],
     "category": "utilities",

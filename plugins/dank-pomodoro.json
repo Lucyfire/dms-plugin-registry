@@ -1,4 +1,5 @@
 {
+    "id": "dankPomodoroTimer",
     "name": "Dank Pomodoro Timer",
     "capabilities": ["dankbar-widget"],
     "category": "utilities",

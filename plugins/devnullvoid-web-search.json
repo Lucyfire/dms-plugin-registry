@@ -1,4 +1,5 @@
 {
+  "id": "webSearch",
   "name": "Web Search",
   "capabilities": ["launcher"],
   "category": "utilities",

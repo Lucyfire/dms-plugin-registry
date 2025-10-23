@@ -1,4 +1,5 @@
 {
+  "id": "emojiLauncher",
   "name": "Emoji & Unicode Launcher",
   "capabilities": ["launcher"],
   "category": "utilities",

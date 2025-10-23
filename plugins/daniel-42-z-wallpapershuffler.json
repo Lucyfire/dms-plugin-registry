@@ -1,4 +1,5 @@
 {
+	"id": "wallpaperShufflerPlugin",
 	"name": "WallpaperShuffler",
 	"capabilities": [
 		"set-wallpaper"

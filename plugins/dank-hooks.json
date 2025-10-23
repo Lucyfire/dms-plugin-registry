@@ -1,4 +1,5 @@
 {
+    "id": "dankHooks",
     "name": "Dank Hooks",
     "capabilities": ["watch-events"],
     "category": "utilities",

@@ -1,4 +1,5 @@
 {
+    "id": "dankActions",
     "name": "Dank Actions",
     "capabilities": ["dankbar-widget"],
     "category": "utilities",
