@@ -326,6 +326,34 @@ Search and copy 300+ emojis and 100+ unicode characters directly from the launch
 
 
 
+#### [Gitmoji Launcher](https://github.com/lucyfire/dms-gitmoji-launcher)
+
+Search and copy gitmojis from https://gitmoji.dev
+
+
+
+- id: gitmojiLauncher
+- name: Gitmoji Launcher
+- author: lucyfire
+- compositors: niri, hyprland
+- capabilities: launcher
+- dependencies: wl-copy
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/lucyfire/dms-gitmoji-launcher/blob/master/screenshot.png?raw=true)
+
+</details>
+
+
+
+
 #### [Niri Windows](https://github.com/rochacbruno/DankNiriWindows)
 
 List and switch to open Niri windows from the launcher
