@@ -68,6 +68,34 @@ Shuffles wallpapers with a given time interval, finds wallpapers recursively ins
 
 
 
+#### [Wallpaper of the Day](https://github.com/max72bra/DankPluginBingWallpaper)
+
+A new fresh daily wallpaper downloaded from a famous portal
+
+
+
+- id: wallpaperBing
+- name: Wallpaper of the Day
+- author: maxb
+- compositors: niri, hyprland
+- capabilities: wallpaper-downloader, wallpaper-set, dankbar-widget
+- dependencies: curl
+- distro: any
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://raw.githubusercontent.com/max72bra/DankPluginBingWallpaper/refs/heads/main/screenshot.png)
+
+</details>
+
+
+
+
 
 ----
 
