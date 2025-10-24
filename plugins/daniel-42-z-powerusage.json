@@ -1,6 +1,6 @@
 {
 	"id": "powerUsagePlugin",
-	"name": "PowerUsage",
+	"name": "Power Usage Monitor",
 	"capabilities": [
 		"dankbar-widget"
 	],

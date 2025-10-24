@@ -11,9 +11,12 @@ This script validates:
 - Screenshot URLs are valid and reachable
 - Repository URLs are valid and reachable
 - Plugin paths exist in the repository (for monorepo plugins)
+- Plugin id is present, in camelCase format, and matches the repository's plugin.json
+- Plugin name matches the name in the repository's plugin.json file
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
@@ -25,6 +28,25 @@ GREEN = "\033[92m"
 RED = "\033[91m"
 YELLOW = "\033[93m"
 RESET = "\033[0m"
+
+
+def is_camel_case(s: str) -> bool:
+    """
+    Check if a string is in camelCase format.
+
+    camelCase rules:
+    - Starts with a lowercase letter
+    - Contains only letters and digits (no underscores, hyphens, or spaces)
+    - May have uppercase letters in the middle (but not at the start)
+
+    Returns:
+        True if the string is in camelCase format
+    """
+    if not s:
+        return False
+    # Must start with lowercase letter, contain only alphanumeric characters
+    # and have at least one character
+    return bool(re.match(r'^[a-z][a-zA-Z0-9]*$', s))
 
 
 def validate_url(url: str, timeout: int = 10) -> tuple[bool, str]:
@@ -109,6 +131,61 @@ def validate_repo_path(repo_url: str, path: str) -> tuple[bool, str]:
         return False, f"Failed to check path: {str(e)}"
 
 
+def fetch_plugin_json(repo_url: str, path: str = "") -> tuple[dict | None, str]:
+    """
+    Fetch the plugin.json file from a git repository.
+
+    Args:
+        repo_url: The repository URL
+        path: Optional path for monorepo plugins (if specified, fetches from {repo}/{path}/plugin.json)
+
+    Returns:
+        (plugin_data, error_message) - plugin_data is None if failed
+    """
+    parsed = urlparse(repo_url)
+
+    # Extract owner/repo from path like /owner/repo or /owner/repo.git
+    path_parts = parsed.path.strip("/").rstrip(".git").split("/")
+    if len(path_parts) < 2:
+        return None, "Invalid repository URL format"
+
+    owner, repo = path_parts[0], path_parts[1]
+
+    # Construct the path to plugin.json
+    plugin_json_path = f"{path}/plugin.json" if path else "plugin.json"
+
+    # Try different methods to fetch the file
+    raw_url = None
+
+    if parsed.netloc == "github.com":
+        # Try raw.githubusercontent.com first (faster, no rate limiting)
+        raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/HEAD/{plugin_json_path}"
+    elif parsed.netloc == "gitlab.com" or "gitlab" in parsed.netloc:
+        # GitLab raw file URL
+        project_path = f"{owner}/{repo}"
+        raw_url = f"https://{parsed.netloc}/{project_path}/-/raw/HEAD/{plugin_json_path}"
+    elif parsed.netloc == "codeberg.org" or "gitea" in parsed.netloc or "forgejo" in parsed.netloc:
+        # Gitea/Forgejo raw file URL
+        raw_url = f"https://{parsed.netloc}/{owner}/{repo}/raw/branch/HEAD/{plugin_json_path}"
+    else:
+        return None, f"Unsupported hosting service: {parsed.netloc}"
+
+    try:
+        response = requests.get(raw_url, timeout=10)
+        if response.status_code == 200:
+            try:
+                plugin_data = response.json()
+                return plugin_data, ""
+            except json.JSONDecodeError as e:
+                return None, f"Invalid JSON in plugin.json: {e}"
+        elif response.status_code == 404:
+            return None, f"plugin.json not found at {plugin_json_path}"
+        else:
+            return None, f"Failed to fetch plugin.json: HTTP {response.status_code}"
+    except requests.exceptions.RequestException as e:
+        return None, f"Failed to fetch plugin.json: {str(e)}"
+
+
 def validate_plugin(plugin_file: Path) -> list[str]:
     """
     Validate a single plugin file.
@@ -127,6 +204,16 @@ def validate_plugin(plugin_file: Path) -> list[str]:
         return [f"Failed to read file: {e}"]
 
     plugin_name = plugin.get("name", plugin_file.stem)
+
+    # Validate id field
+    if "id" not in plugin:
+        errors.append("Missing required 'id' property")
+    else:
+        plugin_id = plugin["id"]
+        if not plugin_id:
+            errors.append("ID is empty")
+        elif not is_camel_case(plugin_id):
+            errors.append(f"ID '{plugin_id}' is not in camelCase format (must start with lowercase letter and contain only letters/digits)")
 
     # Validate screenshot
     if "screenshot" not in plugin:
@@ -151,15 +238,46 @@ def validate_plugin(plugin_file: Path) -> list[str]:
             is_valid, error_msg = validate_url(repo_url)
             if not is_valid:
                 errors.append(f"Repository URL unreachable: {error_msg}")
+            else:
+                # Validate path if present
+                if "path" in plugin and plugin["path"]:
+                    path = plugin["path"]
+                    is_valid, error_msg = validate_repo_path(repo_url, path)
+                    if not is_valid:
+                        errors.append(f"Path validation failed: {error_msg}")
+                    elif error_msg:  # Warning message (unsupported service)
+                        print(f" {YELLOW}({error_msg}){RESET}", end="")
 
-            # Validate path if present
-            if "path" in plugin and plugin["path"]:
-                path = plugin["path"]
-                is_valid, error_msg = validate_repo_path(repo_url, path)
-                if not is_valid:
-                    errors.append(f"Path validation failed: {error_msg}")
-                elif error_msg:  # Warning message (unsupported service)
-                    print(f" {YELLOW}({error_msg}){RESET}", end="")
+                # Validate plugin name and id match repository plugin.json
+                repo_plugin_data, error_msg = fetch_plugin_json(
+                    repo_url,
+                    plugin.get("path", "")
+                )
+                if repo_plugin_data is None:
+                    errors.append(f"Failed to fetch repository plugin.json: {error_msg}")
+                else:
+                    # Validate name match
+                    if "name" in plugin:
+                        repo_plugin_name = repo_plugin_data.get("name")
+                        if not repo_plugin_name:
+                            errors.append("Repository plugin.json is missing 'name' field")
+                        elif repo_plugin_name != plugin_name:
+                            errors.append(
+                                f"Name mismatch: registry has '{plugin_name}' but "
+                                f"repository plugin.json has '{repo_plugin_name}'"
+                            )
+
+                    # Validate id match
+                    if "id" in plugin:
+                        repo_plugin_id = repo_plugin_data.get("id")
+                        plugin_id = plugin["id"]
+                        if not repo_plugin_id:
+                            errors.append("Repository plugin.json is missing 'id' field")
+                        elif repo_plugin_id != plugin_id:
+                            errors.append(
+                                f"ID mismatch: registry has '{plugin_id}' but "
+                                f"repository plugin.json has '{repo_plugin_id}'"
+                            )
 
     return errors
 

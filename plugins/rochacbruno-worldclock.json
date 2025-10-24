@@ -1,6 +1,6 @@
 {
     "id": "worldClock",
-    "name": "WorldClock",
+    "name": "World Clock",
     "capabilities": ["dankbar-widget"],
     "category": "utilities",
     "repo": "https://github.com/rochacbruno/WorldClock",

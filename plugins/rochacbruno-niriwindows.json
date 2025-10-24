@@ -1,6 +1,6 @@
 {
     "id": "niriWindows",
-    "name": "NiriWindows",
+    "name": "Niri Windows",
     "capabilities": ["launcher"],
     "category": "utilities",
     "repo": "https://github.com/rochacbruno/DankNiriWindows",
