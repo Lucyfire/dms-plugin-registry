@@ -1,0 +1,21 @@
+{
+    "name": "Gitmoji Launcher",
+    "capabilities": [
+        "launcher"
+    ],
+    "category": "utilities",
+    "repo": "https://github.com/lucyfire/dms-gitmoji-launcher",
+    "author": "lucyfire",
+    "description": "Search and copy gitmojis from https://gitmoji.dev",
+    "dependencies": [
+        "wl-copy"
+    ],
+    "compositors": [
+        "niri",
+        "hyprland"
+    ],
+    "distro": [
+        "any"
+    ],
+    "screenshot": "https://github.com/lucyfire/dms-gitmoji-launcher/blob/master/screenshot.png?raw=true"
+}
