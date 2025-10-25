@@ -1,0 +1,23 @@
+{
+    "id": "wallpaperDiscovery",
+    "name": "Wallpaper Discovery",
+    "capabilities": [
+        "dankbar-widget"
+    ],
+    "category": "utilities",
+    "repo": "https://github.com/lucyfire/dms-plugins",
+    "path": "wallpaperDiscovery",
+    "author": "lucyfire",
+    "description": "Search and download wallpapers",
+    "dependencies": [
+        "curl"
+    ],
+    "compositors": [
+        "niri",
+        "hyprland"
+    ],
+    "distro": [
+        "any"
+    ],
+    "screenshot": "https://github.com/Lucyfire/dms-plugins/blob/master/wallpaperDiscovery/screenshot.png?raw=true"
+}

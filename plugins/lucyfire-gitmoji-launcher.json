@@ -5,7 +5,8 @@
         "launcher"
     ],
     "category": "utilities",
-    "repo": "https://github.com/lucyfire/dms-gitmoji-launcher",
+    "repo": "https://github.com/lucyfire/dms-plugins",
+    "path": "gitmojiLauncher",
     "author": "lucyfire",
     "description": "Search and copy gitmojis from https://gitmoji.dev",
     "dependencies": [
@@ -18,5 +19,5 @@
     "distro": [
         "any"
     ],
-    "screenshot": "https://github.com/lucyfire/dms-gitmoji-launcher/blob/master/screenshot.png?raw=true"
+    "screenshot": "https://github.com/Lucyfire/dms-plugins/blob/master/gitmojiLauncher/screenshot.png?raw=true"
 }
