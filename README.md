@@ -354,7 +354,7 @@ Search and copy 300+ emojis and 100+ unicode characters directly from the launch
 
 
 
-#### [Gitmoji Launcher](https://github.com/lucyfire/dms-gitmoji-launcher)
+#### [Gitmoji Launcher](https://github.com/lucyfire/dms-plugins)
 
 Search and copy gitmojis from https://gitmoji.dev
 
@@ -370,12 +370,17 @@ Search and copy gitmojis from https://gitmoji.dev
 
 
 
+> [!NOTE]
+> This plugin is part of a monorepo, please copy the contents of the [gitmojiLauncher](https://github.com/lucyfire/dms-plugins/tree/main/gitmojiLauncher) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+
+
+
 
 
 <details>
 <summary>Screenshot</summary>
 
-![screenshot](https://github.com/lucyfire/dms-gitmoji-launcher/blob/master/screenshot.png?raw=true)
+![screenshot](https://github.com/Lucyfire/dms-plugins/blob/master/gitmojiLauncher/screenshot.png?raw=true)
 
 </details>
 
@@ -404,6 +409,39 @@ List and switch to open Niri windows from the launcher
 <summary>Screenshot</summary>
 
 ![screenshot](https://github.com/rochacbruno/DankNiriWindows/raw/main/screenshot.png)
+
+</details>
+
+
+
+
+#### [Wallpaper Discovery](https://github.com/lucyfire/dms-plugins)
+
+Search and download wallpapers
+
+
+
+- id: wallpaperDiscovery
+- name: Wallpaper Discovery
+- author: lucyfire
+- compositors: niri, hyprland
+- capabilities: dankbar-widget
+- dependencies: curl
+- distro: any
+
+
+
+> [!NOTE]
+> This plugin is part of a monorepo, please copy the contents of the [wallpaperDiscovery](https://github.com/lucyfire/dms-plugins/tree/main/wallpaperDiscovery) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://github.com/Lucyfire/dms-plugins/blob/master/wallpaperDiscovery/screenshot.png?raw=true)
 
 </details>
 
