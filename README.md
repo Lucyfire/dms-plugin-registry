@@ -387,6 +387,39 @@ Search and copy gitmojis from https://gitmoji.dev
 
 
 
+#### [Grimblast](https://github.com/TaylanTatli/dms-plugins)
+
+Quick screenshot menu for grimblast with multiple capture modes
+
+
+
+- id: grimblast
+- name: Grimblast
+- author: Taylan TATLI
+- compositors: hyprland
+- capabilities: screenshot-tool, dankbar-widget
+- dependencies: grimblast
+- distro: any
+
+
+
+> [!NOTE]
+> This plugin is part of a monorepo, please copy the contents of the [grimblast](https://github.com/TaylanTatli/dms-plugins/tree/main/grimblast) folder to your `~/.config/DankMaterialShell/plugins/` folder.
+
+
+
+
+
+<details>
+<summary>Screenshot</summary>
+
+![screenshot](https://raw.githubusercontent.com/TaylanTatli/dms-plugins/refs/heads/master/grimblast/screenshot.png)
+
+</details>
+
+
+
+
 #### [Niri Windows](https://github.com/rochacbruno/DankNiriWindows)
 
 List and switch to open Niri windows from the launcher
